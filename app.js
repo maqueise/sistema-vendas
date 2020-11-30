@@ -1,4 +1,4 @@
-const { response } = require('express')
+
 const express = require('express')
 const nunjucks = require('nunjucks')
 const {db} = require('./src/db/connection')
