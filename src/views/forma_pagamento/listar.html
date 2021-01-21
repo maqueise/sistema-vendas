@@ -4,24 +4,26 @@
 
     <section class="card m-5">
         <header class="card-header">
-            <h3>Categoria de Produto</h3>
+            <h3>Formas de Pagamento</h3>
         </header>
         <div class="card-body">
-            <a href="/categoria-produto/adicionar" class="btn btn-primary m-2">Adicionar</a>
+            <a href="/forma_pagamento/adicionar" class="btn btn-primary m-2">Adicionar</a>
             <table class="table">
                 <thead>
                     <th>ID</th>
-                    <th>Descrição</th>
+                    <th>Nome</th>
+                   
                     <th>Ações</th>
                 </thead>
                 <tbody>
-                    {% for categoria in categorias %} 
+                    {% for forma_pagamento in forma_pagamento_lista %} 
                         <tr>
-                            <td>{{ categoria.id }}</td>
-                            <td>{{ categoria.descricao }}</td>
+                            <td>{{ forma_pagamento.id }}</td>
+                            <td>{{ forma_pagamento.descricao }}</td>
+                           
                             <td>
-                                <a href="#">Editar</a>
-                                <a href="#">Excluir</a>
+                                <a href="/forma_pagamento/editar/{{forma_pagamento.id}}">Editar</a>
+                                <a href="/forma_pagamento/excluir/{{forma_pagamento.id}}">Excluir</a>
                             </td>
                         </tr>
                     {% endfor %}

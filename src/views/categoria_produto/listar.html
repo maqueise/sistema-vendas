@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+
+{% block main %}
+
+    <section class="card m-5">
+        <header class="card-header">
+            <h3>Categorias de Produto</h3>
+        </header>
+        <div class="card-body">
+            <a href="/categoria_produto/adicionar" class="btn btn-primary m-2">Adicionar</a>
+            <table class="table">
+                <thead>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                   
+                    <th>Ações</th>
+                </thead>
+                <tbody>
+                    {% for categoria_produto in categoria_produto_lista %} 
+                        <tr>
+                            <td>{{ categoria_produto.id }}</td>
+                            <td>{{ categoria_produto.descricao }}</td>
+                           
+                            <td>
+                                <a href="/categoria_produto/editar/{{categoria_produto.id}}">Editar</a>
+                                <a href="/categoria_produto/excluir/{{categoria_produto.id}}">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div><!-- card-body -->
+    </section><!-- card-->
+
+   
+{% endblock %}
